@@ -51,10 +51,10 @@ class GreetrClass extends EventEmitter {
         this.emit('greet', data);
     }
 }
-var greeter1 = new GreetrClass();
+var greeter2 = new GreetrClass();
 
-greeter1.on('greet', function (data) {
+greeter2.on('greet', function (data) {
     console.log('Someone greeted!: ' + data)
 });
 
-greeter1.greet('Nik');
+greeter2.greet('Nik');
