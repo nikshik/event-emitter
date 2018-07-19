@@ -1,6 +1,6 @@
 # event-emmiter
 
-This is just an simple implementation EventEmitter. 
+This is just an simple implementation of EventEmitter. 
 app.js contains example of simple EventEmitter usage and example of NodeJs EventEmitter usage
 
 To run example with node 10:
