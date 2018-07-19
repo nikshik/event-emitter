@@ -18,7 +18,7 @@ console.log('Hello!');
 emitter.emit('greet');
 
 // NodeJS EventEmitter usage
-console.log('--=== NodeJS EventEmitter example ===--')
+console.log('\n--=== NodeJS EventEmitter example ===--')
 function Greetr() {
     EventEmitter.call(this);
     this.greeting = 'Hello world!';
@@ -31,6 +31,27 @@ Greetr.prototype.greet = function (data) {
 }
 
 var greeter1 = new Greetr();
+
+greeter1.on('greet', function (data) {
+    console.log('Someone greeted!: ' + data)
+});
+
+greeter1.greet('Nik');
+
+// NodeJS EventEmitter with classes usage
+console.log('\n--=== NodeJS EventEmitter with classes example ===--')
+class GreetrClass extends EventEmitter {
+    constructor() {
+        super();
+        this.greeting = 'Hello class world!';
+    }
+
+    greet(data) {
+        console.log(`${this.greeting}: ${data}`);
+        this.emit('greet', data);
+    }
+}
+var greeter1 = new GreetrClass();
 
 greeter1.on('greet', function (data) {
     console.log('Someone greeted!: ' + data)
