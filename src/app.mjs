@@ -20,6 +20,7 @@ emitter.emit('greet');
 // NodeJS EventEmitter usage
 console.log('--=== NodeJS EventEmitter example ===--')
 function Greetr() {
+    EventEmitter.call(this);
     this.greeting = 'Hello world!';
 }
 
